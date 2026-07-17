@@ -1,0 +1,13 @@
+class Solution {
+    public int findClosestNumber(int[] nums) {
+        int closest = nums[0];
+        int distance = Integer.MAX_VALUE;
+        for(int i = 1;i<nums.length;i++){
+            if(Math.abs(nums[i])<Math.abs(closest))
+                closest = nums[i];
+            else if(Math.abs(nums[i])== Math.abs(closest)){
+                closest = Math.max(closest, nums[i]);
+            }
+
+        }
+        return closest;
