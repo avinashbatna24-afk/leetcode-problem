@@ -7,10 +7,19 @@ class Solution {
 
         for(int i = 0;i<(1<<nums.length);i++){
             List<Integer> l = new ArrayList<>();
-            for(int j = 0;j<nums.length;j++){
-                if(checkKB(i,j) == 1){
-                    l.add(nums[j]);
+            // for(int j = 0;j<nums.length;j++){
+            //     if(checkKB(i,j) == 1){
+            //         l.add(nums[j]);
+            //     }
+            // }
+            int k = i;
+            int b = 0;
+            while(k>0){
+                if((k&1) == 1){
+                    l.add(nums[b]);
                 }
+                k>>=1;
+                b++;
             }
             li.add(l);
         }
